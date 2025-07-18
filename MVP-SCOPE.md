@@ -1,45 +1,30 @@
 # MVP SCOPE
-## Feature: Data Model and API Design
+## Feature: User Registration and Profile Creation
 
 ### Description 
 
- A unified data model for products, shops, inventory, users, and transactions, with RESTful APIs supporting CRUD operations, real-time updates, and secure access. Includes OpenAPI/Swagger documentation for all endpoints.
+ Enable new users to register using email, phone, or social login. Guide users through creating a profile including skills offered, skills sought, language preferences, accessibility needs, and user type. Profile includes avatar, time zone, and communication preferences.
 
  ###Scope 
 
- Covers all core platform entities and third-party integration points. APIs must be versioned, backward compatible, and support webhooks for inventory update events. Includes normalized data models for products, shops, inventory, users, and reviews.
+ Covers registration and profile creation for all user segments; excludes advanced verification or reputation systems. Must meet WCAG 2.2 accessibility standards. Support email, mobile, and at least one social login provider. Require users to declare at least one skill to offer and one to learn. Allow editing of profile fields after registration.
 
-## Feature: Onboarding and Ongoing Support for Shop Owners
+## Feature: Skill Barter Session Creation and Matching
 
 ### Description 
 
- High-touch onboarding and continuous support for shop owners, including in-person training, vernacular documentation, onboarding agents, and helpdesk.
+ Users can create, propose, and discover micro-skill exchange sessions. Sessions specify skill offered, skill sought, duration, time slots, language, and accessibility needs. Matching algorithm suggests reciprocal or compatible partners. Users can browse, filter, and request sessions.
 
  ###Scope 
 
- Covers all shop owners in the onboarding pipeline and active user base. Includes vernacular (Tamil) support materials, live assistance, helpdesk system, and monitoring of onboarding completion and satisfaction metrics.
+ Covers session proposal, matching, browsing, and filtering; excludes post-session feedback or dispute resolution. Matching algorithm must be inclusive of language and accessibility preferences. Support session requests, acceptances, and rejections with automated notifications.
 
-## Feature: Platform Architecture and Scalability
+## Feature: Platform Credit System and Barter Transactions
 
 ### Description 
 
- A modular, scalable, cloud-based architecture that supports rapid onboarding, real-time data synchronization, and high-availability user access. Uses microservices and supports auto-scaling.
+ All skill exchanges are conducted using a transparent credit system. Users earn credits for teaching and spend credits to learn. Dashboard displays credit balance, transaction history, and pending barter transactions. Clear explanations and visual cues guide users through earning, spending, and transferring credits.
 
  ###Scope 
 
- Covers all core backend services and data pipelines. Uses microservices for inventory, user, shop, and notification modules. Deployed on cloud infrastructure with auto-scaling and load balancing. Supports future analytics and AI integration.
-
-## Feature: User Inventory Search and Filtering Across Shops
-
-### Description 
-
- Enable end-users to search, filter, and compare products across multiple local shops in Chennai. Includes robust sorting/filtering (category, proximity, price) and real-time inventory updates.
-
- ###Scope 
-
- Covers all product categories and enrolled shops in Chennai. Supports multi-level filtering (category, sub-category, proximity, price), real-time updates, and only displays products with confirmed current stock.
-## USER PREFERENCES:
-Focus on foundational features that drive shop owner participation and platform readiness for pilot rollout.
-Prioritize robust onboarding and support to maximize shop owner adoption.
-Ensure platform is scalable and ready for incremental expansion.
-Prioritize user-facing search and filtering as the primary value proposition.
+ Covers earning, spending, and viewing credits for all users; excludes external credit purchase or monetization. Credit system must be transparent, auditable, and free of hidden rules. Implement virtual credit wallet with balance, transaction log, and visual indicators. Award credits automatically after session completion and confirmation by both parties.

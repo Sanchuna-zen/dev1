@@ -1,7 +1,11 @@
-import { LiveChatWidget } from '@/components/help/LiveChatWidget';
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
+import Link from "next/link";
+import { Bell } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +32,28 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        <LiveChatWidget />
+        <header className="py-4 px-8 flex justify-between items-center">
+          <Link href="/">
+            <h1 className="text-2xl font-bold">SkillSwap</h1>
+          </Link>
+          <nav>
+            <ul className="flex gap-4 items-center">
+              <li><Link href="/dashboard">Dashboard</Link></li>
+              <li><Link href="/sessions/browse">Browse</Link></li>
+              <li><Link href="/sessions/propose">Propose</Link></li>
+              <li><Link href="/profile">Profile</Link></li>
+              <li>
+                <Link href="/notifications">
+                  <Button size="icon" variant="outline">
+                    <Bell className="h-5 w-5" />
+                  </Button>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>{children}</main>
+        <Toaster />
       </body>
     </html>
   );

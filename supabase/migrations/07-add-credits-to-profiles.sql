@@ -1,0 +1,3 @@
+
+ALTER TABLE profiles
+ADD COLUMN credits INT DEFAULT 0;

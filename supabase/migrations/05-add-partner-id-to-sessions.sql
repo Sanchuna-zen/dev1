@@ -1,0 +1,3 @@
+
+ALTER TABLE sessions
+ADD COLUMN partner_id UUID REFERENCES auth.users(id) ON DELETE SET NULL;
